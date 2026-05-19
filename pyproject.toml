@@ -20,7 +20,7 @@ dependencies = [
     "fastapi",
     "pillow",
     "streamlit-extras",
-    "streamlit-components",
+    # "streamlit-components",  # Removed due to Python 3.13+ incompatibility
 ]
 
 [tool.uv]

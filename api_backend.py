@@ -1,7 +1,8 @@
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
 from agent.agent_backend import create_agent
-import asyncio
 
 app = FastAPI(title="Gemma 4 Challenge API")
 

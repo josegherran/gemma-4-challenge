@@ -3,6 +3,7 @@
 
 from strands_agents_tools import Skill, skill_registry
 
+
 @skill_registry.register
 class GenerateImageSkill(Skill):
     """

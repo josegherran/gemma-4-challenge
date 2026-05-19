@@ -1,10 +1,10 @@
+import asyncio
+from io import BytesIO
+
+import httpx
+import requests
 import streamlit as st
 from PIL import Image
-import requests
-from io import BytesIO
-import json
-import httpx
-import asyncio
 
 st.set_page_config(page_title="Gemma 4 Challenge", layout="wide")
 
@@ -22,17 +22,6 @@ with col_settings:
         ["Ollama", "Vertex AI", "Bedrock", "Azure OpenAI"],
         index=0,
         key="provider_selectbox"
-    )
-    model_options = {
-        "Ollama": ["gemma-4-base", "gemma-4-large", "gemma-4-xl"],
-        "Vertex AI": ["gemma-4-vertex-standard", "gemma-4-vertex-pro"],
-        "Bedrock": ["gemma-4-bedrock-lite", "gemma-4-bedrock-adv"],
-        "Azure OpenAI": ["gemma-4-azure-basic", "gemma-4-azure-premium"]
-    }
-    provider = st.selectbox(
-        "Select Provider",
-        ["Ollama", "Vertex AI", "Bedrock", "Azure OpenAI"],
-        index=0
     )
     # Dynamic model list for Ollama
     ollama_models = []

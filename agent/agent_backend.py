@@ -2,8 +2,10 @@
 # Backend agent entrypoint for webchat and image generation
 
 from strands_agents import Agent
+
 from agent.roles import WebchatAgentRole
 from agent.skills import GenerateImageSkill
+
 
 async def create_agent():
     agent = Agent(

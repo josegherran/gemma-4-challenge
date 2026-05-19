@@ -1,6 +1,7 @@
+import pytest
 from config import Settings
 from pydantic import ValidationError
-import pytest
+
 
 def test_valid_settings():
     s = Settings()

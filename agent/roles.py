@@ -3,6 +3,7 @@
 
 from strands_agents import AgentRole
 
+
 class WebchatAgentRole(AgentRole):
     """
     Role for handling webchat interactions and image generation requests.
