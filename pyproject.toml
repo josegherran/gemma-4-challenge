@@ -17,6 +17,10 @@ dependencies = [
     "asyncio",
     "anyio",
     "uvicorn",
+    "fastapi",
+    "pillow",
+    "streamlit-extras",
+    "streamlit-components",
 ]
 
 [tool.uv]
@@ -24,5 +28,9 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ruff",
-    "mypy"
+    "mypy",
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "mkdocs"
 ]
