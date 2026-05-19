@@ -1,9 +1,0 @@
-site_name: Gemma 4 Challenge Docs
-nav:
-  - Home: index.md
-  - SPEC: SPEC.md
-  - Developer Guide: README_DEV.md
-  - Setup: SETUP.md
-  - API: api_backend.py
-  - UI: webchat_ui.py
-  - Agent: agent/agent_backend.py

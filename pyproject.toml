@@ -21,6 +21,7 @@ dependencies = [
     "pillow",
     "streamlit-extras",
     # "streamlit-components",  # Removed due to Python 3.13+ incompatibility
+    "pydantic-settings>=2.14.1",
 ]
 
 [tool.uv]

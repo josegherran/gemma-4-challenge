@@ -1,14 +1,18 @@
 # agent_backend.py
 # Backend agent entrypoint for webchat and image generation
 
-from strands_agents import Agent
 
 from agent.roles import WebchatAgentRole
 from agent.skills import GenerateImageSkill
 
+class StubAgent:
+    def __init__(self, role, skills, name):
+        self.role = role
+        self.skills = skills
+        self.name = name
 
 async def create_agent():
-    agent = Agent(
+    agent = StubAgent(
         role=WebchatAgentRole(),
         skills=[GenerateImageSkill()],
         name="WebchatImageAgent"

@@ -1,10 +1,7 @@
 # roles.py
 # Define agent roles for the backend agent (decoupled from UI)
 
-from strands_agents import AgentRole
-
-
-class WebchatAgentRole(AgentRole):
+class WebchatAgentRole:
     """
     Role for handling webchat interactions and image generation requests.
     """
