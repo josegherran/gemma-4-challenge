@@ -8,13 +8,35 @@ class HistoryScreen extends StatefulWidget {
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HistoryScreenState extends State<HistoryScreen> {
   final TriageHistoryService _historyService = TriageHistoryService();
   String? _urgencyFilter;
+  DateTime? _fromDate;
+  DateTime? _toDate;
+
+  Future<void> _pickDateRange(BuildContext context) async {
+    final picked = await showDateRangePicker(
+      context: context,
+      firstDate: DateTime(2020),
+      lastDate: DateTime.now().add(Duration(days: 1)),
+      initialDateRange: _fromDate != null && _toDate != null
+          ? DateTimeRange(start: _fromDate!, end: _toDate!)
+          : null,
+    );
+    if (picked != null) {
+      setState(() {
+        _fromDate = picked.start;
+        _toDate = picked.end;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    final sessions = _historyService.search(urgency: _urgencyFilter);
+    final sessions = _historyService.search(
+      urgency: _urgencyFilter,
+      from: _fromDate,
+      to: _toDate,
+    );
     return Scaffold(
       appBar: AppBar(title: Text('Triage History')),
       body: Column(
@@ -36,6 +58,23 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       .toList(),
                   onChanged: (val) => setState(() => _urgencyFilter = val),
                 ),
+                SizedBox(width: 16),
+                OutlinedButton.icon(
+                  icon: Icon(Icons.date_range),
+                  label: Text(_fromDate != null && _toDate != null
+                      ? '${_fromDate!.toLocal().toString().split(' ')[0]} - ${_toDate!.toLocal().toString().split(' ')[0]}'
+                      : 'Date Range'),
+                  onPressed: () => _pickDateRange(context),
+                ),
+                if (_fromDate != null || _toDate != null)
+                  IconButton(
+                    icon: Icon(Icons.clear),
+                    tooltip: 'Clear date filter',
+                    onPressed: () => setState(() {
+                      _fromDate = null;
+                      _toDate = null;
+                    }),
+                  ),
               ],
             ),
           ),
@@ -60,6 +99,14 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   },
                 );
               },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'Disclaimer: This is not a medical diagnosis. If in doubt, seek professional care.',
+              style: TextStyle(color: Colors.black54, fontStyle: FontStyle.italic, fontSize: 16),
+              textAlign: TextAlign.center,
             ),
           ),
         ],

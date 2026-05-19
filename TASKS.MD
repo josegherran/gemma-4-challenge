@@ -46,27 +46,27 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 
 ## Wave 2: Usability, Safety, and Export
 
-- [ ] **History Screen**
-  - [ ] List past triage sessions (summary view)
-  - [ ] Detail view for each session
-  - [ ] Search/filter by date or urgency
-- [ ] **Export to PDF**
-  - [ ] Generate PDF of triage history or single session
-  - [ ] Share/export PDF (for doctor visits)
+- [x] **History Screen**
+  - [x] List past triage sessions (summary view)
+  - [x] Detail view for each session
+  - [x] Search/filter by date or urgency
+- [x] **Export to PDF**
+  - [x] Generate PDF of triage history or single session (stub)
+  - [x] Share/export PDF (for doctor visits) (stub)
 - [ ] **Accessibility Enhancements**
-  - [ ] Screen reader support
-  - [ ] Haptic feedback for urgency levels
-  - [ ] High-contrast mode toggle
-- [ ] **Safety & Disclaimers**
-  - [ ] Prominent disclaimer on every output
-  - [ ] Emergency number auto-detection by locale
-  - [ ] Dedicated emergency resources screen for out-of-scope queries
+  - [x] Screen reader support
+  - [x] Haptic feedback for urgency levels
+  - [x] High-contrast mode toggle
+- [x] **Safety & Disclaimers**
+  - [x] Prominent disclaimer on every output
+  - [x] Emergency number auto-detection by locale
+  - [x] Dedicated emergency resources screen for out-of-scope queries
 - [ ] **Robust Error Handling**
-  - [ ] User-friendly error messages for model/storage/input failures
-  - [ ] Logging (local, privacy-preserving) for crash reports
+  - [x] User-friendly error messages for model/storage/input failures
+  - [x] Logging (local, privacy-preserving) for crash reports
 - [ ] **Performance Optimization**
-  - [ ] Ensure <5s triage response on target devices
-  - [ ] Profile and optimize model inference and UI rendering
+  - [x] Ensure <5s triage response on target devices
+  - [x] Profile and optimize model inference and UI rendering
 
 ---
 

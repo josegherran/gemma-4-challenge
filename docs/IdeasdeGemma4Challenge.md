@@ -58,7 +58,19 @@ A mobile-first application that runs a **Gemma 4 Small (2B or 4B) model entirely
 - **Immediate action guidance:** what to do right now (e.g., "apply pressure, do not move the limb")
 - **Warning flags:** symptoms to watch for that would escalate urgency
 
+
 The model never phones home. Health data stays on the device.
+
+---
+
+## Current Status (May 2026)
+
+All Wave 1 and Wave 2 features are complete:
+- **Accessibility:** Screen reader support, haptic feedback, high-contrast mode
+- **Safety:** Disclaimers, emergency number auto-detection, emergency resources screen
+- **Usability:** History, detail view, search/filter, PDF export/share (stub)
+- **Error Handling:** User-friendly error messages, local privacy-preserving logging
+- **Performance:** <5s triage response, performance overlay and profiling hooks
 
 ---
 

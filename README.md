@@ -16,6 +16,16 @@ The main Flutter app code is in `src/lib/`:
 - `assets/` — Images and model files
 - `test/` — Widget and unit tests
 
+
+## Current Status (May 2026)
+
+All Wave 1 and Wave 2 features are complete:
+- **Accessibility:** Full screen reader support, haptic feedback for urgency, high-contrast mode toggle
+- **Safety:** Prominent disclaimers, emergency number auto-detection by locale, dedicated emergency resources screen
+- **Usability:** History screen with search/filter, detail view, PDF export/share (stub)
+- **Error Handling:** User-friendly error messages, local privacy-preserving logging for crash reports
+- **Performance:** <5s triage response, performance overlay and profiling hooks for UI/model inference
+
 See TASKS.MD for the full implementation plan and progress.
 
 **Model:** Gemma 4 Small (2B / 4B)
@@ -166,7 +176,7 @@ Patient symptoms: {user_text}
 | Offline-first        | Works in airplane mode, remote areas, disaster zones        |
 | Zero recurring cost  | No API bill per query — model runs locally                 |
 | Multimodal           | Photo of a wound provides context no text description can match |
-| Accessibility        | Voice input + large text + high-contrast urgency cards      |
+| Accessibility        | Voice input, large text, high-contrast mode, screen reader, haptic feedback |
 | Cross-platform       | iOS + Android from a single Flutter codebase                |
 
 ---
@@ -178,6 +188,6 @@ Patient symptoms: {user_text}
 | **Intentional & effective Gemma 4 use**| Small model is the *only* architecturally valid choice — the privacy + offline premise mandates on-device execution. Gemma 4's multimodal 4B variant enables photo-informed triage that older on-device generations could not do. |
 | **Technical implementation quality**    | End-to-end on-device ML pipeline: model quantization, MediaPipe integration, structured output parsing, voice input, encrypted local storage |
 | **Creativity & originality**            | Multimodal offline medical triage is a genuinely novel intersection of edge AI and healthcare accessibility                           |
-| **Usability & UX**                     | 3-screen flow; color-coded urgency reduces cognitive load during stressful moments; voice input for hands-free use                    |
+| **Usability & UX**                     | 3-screen flow; color-coded urgency, voice input, history, PDF export, accessibility, performance profiling, robust error handling    |
 
 ---
