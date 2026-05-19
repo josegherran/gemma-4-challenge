@@ -78,7 +78,7 @@ with col_chat:
     user_prompt = st.text_input("Enter your prompt to generate an image:")
 
     # --- Moved Settings: Aspect Ratio, Formatting, Color Guidance, Exclude Items ---
-    aspect_ratio = st.selectbox("Aspect Ratio", ["16:9", "3:2", "4:3", "5:4", "Square", "Portrait"])
+    aspect_ratio = st.selectbox("Aspect Ratio", ["16:9", "3:2", "4:3", "5:4"])
     formatting = st.selectbox("Formatting", ["Default", "Landscape", "Portrait", "Square"])
     color_guidance = st.color_picker("Color Guidance", value="#ffffff")
     exclude_items = st.text_input("Exclude Items (comma-separated)")
