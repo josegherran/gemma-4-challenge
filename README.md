@@ -2,6 +2,22 @@
 
 **Tagline:** Private, offline, multimodal symptom triage — powered by Gemma 4 on the device in your pocket.
 
+---
+
+## Project Structure (Wave 1)
+
+The main Flutter app code is in `src/lib/`:
+
+- `main.dart` — App entry point and navigation
+- `screens/` — UI screens (Input, Triage Card, History)
+- `widgets/` — Reusable UI components (e.g., LargeButton, ColorBlock)
+- `services/` — Stubs for voice input, photo input, and model integration
+- `theme/` — App color scheme and theme
+- `assets/` — Images and model files
+- `test/` — Widget and unit tests
+
+See TASKS.MD for the full implementation plan and progress.
+
 **Model:** Gemma 4 Small (2B / 4B)
 
 ---
@@ -78,6 +94,7 @@ Provide accessible, private, offline-capable first-level medical triage guidance
 └─────────────────────────────────────────────────────┘
          ↑ ZERO network calls after model download ↑
 ```
+
 
 **Tech Stack:**
 
