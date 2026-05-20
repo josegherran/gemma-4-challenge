@@ -11,17 +11,17 @@ class LargeButton extends StatelessWidget {
     required this.onPressed,
     this.color,
     this.icon,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       onPressed: onPressed,
-      icon: icon != null ? Icon(icon, size: 28) : SizedBox.shrink(),
-      label: Text(label, style: TextStyle(fontSize: 20)),
+      icon: icon != null ? Icon(icon, size: 28) : const SizedBox.shrink(),
+      label: Text(label, style: const TextStyle(fontSize: 20)),
       style: ElevatedButton.styleFrom(
-        minimumSize: Size(double.infinity, 56),
+        minimumSize: const Size(double.infinity, 56),
         backgroundColor: color,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),

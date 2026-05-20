@@ -9,10 +9,12 @@ import 'screens/emergency_resources_screen.dart';
 import 'theme/app_theme.dart';
 
 void main() {
-  runApp(B1MedicalTriageApp());
+  runApp(const B1MedicalTriageApp());
 }
 
 class B1MedicalTriageApp extends StatefulWidget {
+  const B1MedicalTriageApp({super.key});
+
   @override
   State<B1MedicalTriageApp> createState() => _B1MedicalTriageAppState();
 }
@@ -35,10 +37,10 @@ class B1MedicalTriageApp extends StatefulWidget {
       theme: _highContrast ? AppTheme.highContrastTheme : AppTheme.lightTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => InputScreen(),
-        '/triage': (context) => TriageCardScreen(),
-        '/history': (context) => HistoryScreen(),
-        '/emergency': (context) => EmergencyResourcesScreen(),
+        '/': (context) => const InputScreen(),
+        '/triage': (context) => const TriageCardScreen(),
+        '/history': (context) => const HistoryScreen(),
+        '/emergency': (context) => const EmergencyResourcesScreen(),
         // '/session/:id' handled via MaterialPageRoute in history_screen.dart
       },
       showPerformanceOverlay: _showPerfOverlay,
@@ -55,9 +57,9 @@ class B1MedicalTriageApp extends StatefulWidget {
                   children: [
                     DropdownButton<String>(
                       value: _selectedLanguage,
-                      icon: Icon(Icons.language),
+                      icon: const Icon(Icons.language),
                       underline: Container(height: 2, color: Colors.transparent),
-                      items: [
+                      items: const [
                         DropdownMenuItem(value: 'en', child: Text('English')),
                         DropdownMenuItem(value: 'es', child: Text('Español')),
                         DropdownMenuItem(value: 'fr', child: Text('Français')),
@@ -65,25 +67,25 @@ class B1MedicalTriageApp extends StatefulWidget {
                         // Add more languages as needed
                       ],
                       onChanged: _changeLanguage,
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
                       dropdownColor: Colors.white,
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     FloatingActionButton.extended(
                       heroTag: 'contrast_toggle',
                       onPressed: _toggleContrast,
-                      icon: Icon(Icons.contrast),
+                      icon: const Icon(Icons.contrast),
                       label: Text(_highContrast ? 'Normal' : 'High Contrast'),
                       backgroundColor: _highContrast ? Colors.amber : Colors.teal,
                       foregroundColor: _highContrast ? Colors.black : Colors.white,
                       elevation: 2,
                     ),
-                    SizedBox(height: 12),
-                    if (!bool.fromEnvironment('dart.vm.product'))
+                    const SizedBox(height: 12),
+                    if (!const bool.fromEnvironment('dart.vm.product'))
                       FloatingActionButton.extended(
                         heroTag: 'perf_toggle',
                         onPressed: _togglePerfOverlay,
-                        icon: Icon(Icons.speed),
+                        icon: const Icon(Icons.speed),
                         label: Text(_showPerfOverlay ? 'Hide Perf' : 'Show Perf'),
                         backgroundColor: Colors.deepPurple,
                         foregroundColor: Colors.white,

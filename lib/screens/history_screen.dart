@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/triage_session.dart';
 import '../services/triage_history_service.dart';
 import 'session_detail_screen.dart';
 
 class HistoryScreen extends StatefulWidget {
+  const HistoryScreen({super.key});
+
   @override
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
@@ -18,7 +19,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     final picked = await showDateRangePicker(
       context: context,
       firstDate: DateTime(2020),
-      lastDate: DateTime.now().add(Duration(days: 1)),
+      lastDate: DateTime.now().add(const Duration(days: 1)),
       initialDateRange: _fromDate != null && _toDate != null
           ? DateTimeRange(start: _fromDate!, end: _toDate!)
           : null,
@@ -39,29 +40,29 @@ class _HistoryScreenState extends State<HistoryScreen> {
       to: _toDate,
     );
     return Scaffold(
-      appBar: AppBar(title: Text('Triage History')),
+      appBar: AppBar(title: Text(context.tr('triageHistory'))),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
               children: [
-                Text('Filter:'),
-                SizedBox(width: 8),
+                Text(context.tr('filter')),
+                const SizedBox(width: 8),
                 DropdownButton<String?>(
                   value: _urgencyFilter,
-                  hint: Text('Urgency'),
+                  hint: Text(context.tr('urgency')),
                   items: [null, 'green', 'yellow', 'red']
                       .map((u) => DropdownMenuItem(
                             value: u,
-                            child: Text(u == null ? 'All' : u[0].toUpperCase() + u.substring(1)),
+                            child: Text(u == null ? context.tr('all') : u[0].toUpperCase() + u.substring(1)),
                           ))
                       .toList(),
                   onChanged: (val) => setState(() => _urgencyFilter = val),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 OutlinedButton.icon(
-                  icon: Icon(Icons.date_range),
+                  icon: const Icon(Icons.date_range),
                   label: Text(_fromDate != null && _toDate != null
                       ? '${_fromDate!.toLocal().toString().split(' ')[0]} - ${_toDate!.toLocal().toString().split(' ')[0]}'
                       : 'Date Range'),
@@ -69,7 +70,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 ),
                 if (_fromDate != null || _toDate != null)
                   IconButton(
-                    icon: Icon(Icons.clear),
+                    icon: const Icon(Icons.clear),
                     tooltip: 'Clear date filter',
                     onPressed: () => setState(() {
                       _fromDate = null;

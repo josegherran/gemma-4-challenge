@@ -4,6 +4,8 @@ import '../services/triage_history_service.dart';
 import 'session_detail_screen.dart';
 
 class HistoryScreen extends StatefulWidget {
+  const HistoryScreen({super.key});
+
   @override
   State<HistoryScreen> createState() => _HistoryScreenState();
 }
@@ -17,7 +19,7 @@ class HistoryScreen extends StatefulWidget {
     final picked = await showDateRangePicker(
       context: context,
       firstDate: DateTime(2020),
-      lastDate: DateTime.now().add(Duration(days: 1)),
+      lastDate: DateTime.now().add(const Duration(days: 1)),
       initialDateRange: _fromDate != null && _toDate != null
           ? DateTimeRange(start: _fromDate!, end: _toDate!)
           : null,
@@ -38,18 +40,18 @@ class HistoryScreen extends StatefulWidget {
       to: _toDate,
     );
     return Scaffold(
-      appBar: AppBar(title: Text('Triage History')),
+      appBar: AppBar(title: const Text('Triage History')),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
               children: [
-                Text('Filter:'),
-                SizedBox(width: 8),
+                const Text('Filter:'),
+                const SizedBox(width: 8),
                 DropdownButton<String?>(
                   value: _urgencyFilter,
-                  hint: Text('Urgency'),
+                  hint: const Text('Urgency'),
                   items: [null, 'green', 'yellow', 'red']
                       .map((u) => DropdownMenuItem(
                             value: u,
@@ -58,9 +60,9 @@ class HistoryScreen extends StatefulWidget {
                       .toList(),
                   onChanged: (val) => setState(() => _urgencyFilter = val),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 OutlinedButton.icon(
-                  icon: Icon(Icons.date_range),
+                  icon: const Icon(Icons.date_range),
                   label: Text(_fromDate != null && _toDate != null
                       ? '${_fromDate!.toLocal().toString().split(' ')[0]} - ${_toDate!.toLocal().toString().split(' ')[0]}'
                       : 'Date Range'),
@@ -68,7 +70,7 @@ class HistoryScreen extends StatefulWidget {
                 ),
                 if (_fromDate != null || _toDate != null)
                   IconButton(
-                    icon: Icon(Icons.clear),
+                    icon: const Icon(Icons.clear),
                     tooltip: 'Clear date filter',
                     onPressed: () => setState(() {
                       _fromDate = null;
@@ -82,13 +84,13 @@ class HistoryScreen extends StatefulWidget {
             child: ListView.separated(
               padding: const EdgeInsets.all(12.0),
               itemCount: sessions.length,
-              separatorBuilder: (context, index) => Divider(),
+              separatorBuilder: (context, index) => const Divider(),
               itemBuilder: (context, index) {
                 final session = sessions[index];
                 return ListTile(
                   title: Text('Session #${session.id}'),
                   subtitle: Text('Urgency: ${session.urgency} | ${session.timestamp}'),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -101,8 +103,8 @@ class HistoryScreen extends StatefulWidget {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
               'Disclaimer: This is not a medical diagnosis. If in doubt, seek professional care.',
               style: TextStyle(color: Colors.black54, fontStyle: FontStyle.italic, fontSize: 16),
@@ -116,5 +118,5 @@ class HistoryScreen extends StatefulWidget {
 }
 
 extension StringCasing on String {
-  String capitalize() => this.length > 0 ? '${this[0].toUpperCase()}${substring(1)}' : this;
+  String capitalize() => isNotEmpty ? '${this[0].toUpperCase()}${substring(1)}' : this;
 }

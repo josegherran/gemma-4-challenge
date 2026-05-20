@@ -9,8 +9,8 @@ class ColorBlock extends StatelessWidget {
     required this.color,
     required this.label,
     this.subtitle,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +26,14 @@ class ColorBlock extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
             ),
             if (subtitle != null)
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
                   subtitle!,
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
+                  style: const TextStyle(color: Colors.white70, fontSize: 16),
                 ),
               ),
           ],

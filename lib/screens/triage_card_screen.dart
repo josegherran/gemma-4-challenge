@@ -2,62 +2,64 @@ import '../services/perf_timer.dart';
 import 'package:flutter/material.dart';
 
 class TriageCardScreen extends StatelessWidget {
+  const TriageCardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Triage Result')),
+      appBar: AppBar(title: Text(context.tr('triageResult'))),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Semantics(
           container: true,
-          label: 'Triage result screen',
+          label: context.tr('triageResult'),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Semantics(
-                label: 'Urgency: urgent, go to ER',
+                label: context.tr('urgency'),
                 child: Container(
                   height: 120,
                   decoration: BoxDecoration(
                     color: Colors.redAccent, // Placeholder for urgency color
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
-                      'URGENT: Go to ER',
+                      'URGENT: Go to ER', // TODO: Localize urgency text if needed
                       style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
-                label: 'Possible conditions',
+                label: context.tr('possibleConditions'),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Possible Conditions:', style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text('- Condition 1: Explanation...'),
-                    Text('- Condition 2: Explanation...'),
+                    Text(context.tr('possibleConditions'), style: const TextStyle(fontWeight: FontWeight.bold)),
+                    const Text('- Condition 1: Explanation...'),
+                    const Text('- Condition 2: Explanation...'),
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
-                label: 'Immediate actions',
+                label: context.tr('immediateActions'),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Immediate Actions:', style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text('- Action 1'),
-                    Text('- Action 2'),
+                    Text(context.tr('immediateActions'), style: const TextStyle(fontWeight: FontWeight.bold)),
+                    const Text('- Action 1'),
+                    const Text('- Action 2'),
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
                 label: 'Escalation warnings',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Escalation Warnings:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -65,21 +67,21 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
                 label: 'Disclaimer: This is not a medical diagnosis. If in doubt, seek professional care.',
-                child: Text(
+                child: const Text(
                   'This is not a medical diagnosis. If in doubt, seek professional care.',
                   style: TextStyle(color: Colors.black54, fontStyle: FontStyle.italic),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Semantics(
                 button: true,
                 label: 'View history button',
                 child: ElevatedButton(
                   onPressed: () => Navigator.pushNamed(context, '/history'),
-                  child: Text('View History'),
+                  child: const Text('View History'),
                 ),
               ),
             ],

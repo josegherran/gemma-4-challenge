@@ -2,10 +2,12 @@ import '../services/perf_timer.dart';
 import 'package:flutter/material.dart';
 
 class TriageCardScreen extends StatelessWidget {
+  const TriageCardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Triage Result')),
+      appBar: AppBar(title: const Text('Triage Result')),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Semantics(
@@ -22,7 +24,7 @@ class TriageCardScreen extends StatelessWidget {
                     color: Colors.redAccent, // Placeholder for urgency color
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'URGENT: Go to ER',
                       style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
@@ -30,10 +32,10 @@ class TriageCardScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
                 label: 'Possible conditions',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Possible Conditions:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -42,10 +44,10 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
                 label: 'Immediate actions',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Immediate Actions:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -54,10 +56,10 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
                 label: 'Escalation warnings',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Escalation Warnings:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -65,15 +67,15 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
                 label: 'Disclaimer: This is not a medical diagnosis. If in doubt, seek professional care.',
-                child: Text(
+                child: const Text(
                   'This is not a medical diagnosis. If in doubt, seek professional care.',
                   style: TextStyle(color: Colors.black54, fontStyle: FontStyle.italic),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Semantics(
                 button: true,
                 label: 'View history button',
@@ -81,8 +83,8 @@ class TriageCardScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/history');
                   },
-                  child: Text('View History'),
-                  style: ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 48)),
+                  style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 48)),
+                  child: const Text('View History'),
                 ),
               ),
             ],
@@ -95,14 +97,14 @@ class TriageCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Replace with actual urgency from model/session
-    final urgency = 'red';
+    const urgency = 'red';
     WidgetsBinding.instance.addPostFrameCallback((_) => _triggerHaptic(urgency));
 
     // Simulate timing the triage/model response (stub)
-    PerfTimer.time('triage_response', () async => await Future.delayed(Duration(milliseconds: 1200)));
+    PerfTimer.time('triage_response', () async => await Future.delayed(const Duration(milliseconds: 1200)));
 
     return Scaffold(
-      appBar: AppBar(title: Text('Triage Result')),
+      appBar: AppBar(title: const Text('Triage Result')),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Semantics(
@@ -119,7 +121,7 @@ class TriageCardScreen extends StatelessWidget {
                     color: Colors.redAccent, // Placeholder for urgency color
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'URGENT: Go to ER',
                       style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
@@ -127,10 +129,10 @@ class TriageCardScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
                 label: 'Possible conditions',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Possible Conditions:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -139,10 +141,10 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
                 label: 'Immediate actions',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Immediate Actions:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -151,10 +153,10 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Semantics(
                 label: 'Escalation warnings',
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Escalation Warnings:', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -162,15 +164,15 @@ class TriageCardScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Semantics(
                 label: 'Disclaimer: This is not a medical diagnosis. If in doubt, seek professional care.',
-                child: Text(
+                child: const Text(
                   'This is not a medical diagnosis. If in doubt, seek professional care.',
                   style: TextStyle(color: Colors.black54, fontStyle: FontStyle.italic),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Semantics(
                 button: true,
                 label: 'View history button',
@@ -178,8 +180,8 @@ class TriageCardScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/history');
                   },
-                  child: Text('View History'),
-                  style: ElevatedButton.styleFrom(minimumSize: Size(double.infinity, 48)),
+                  style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 48)),
+                  child: const Text('View History'),
                 ),
               ),
             ],
