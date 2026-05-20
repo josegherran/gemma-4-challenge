@@ -1,0 +1,33 @@
+name: gemma_4_challenge
+
+description: >
+  B1 · On-Device Medical Triage Copilot. Private, offline, multimodal symptom triage powered by Gemma 4.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter: 
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  # Add your app dependencies here
+  provider: ^6.0.0
+  share_plus: ^7.0.0
+  path_provider: ^2.0.0
+  sqflite: ^2.0.0+4
+  intl: ^0.18.0
+  # Add more as needed
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - src/assets/

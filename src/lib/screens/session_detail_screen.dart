@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../models/triage_session.dart';
 import '../services/pdf_export_service.dart';
 import '../services/local_logger.dart';
 
+class SessionDetailScreen extends StatefulWidget {
   final TriageSession session;
   const SessionDetailScreen({required this.session, Key? key}) : super(key: key);
 
+  @override
+  State<SessionDetailScreen> createState() => _SessionDetailScreenState();
+}
 
+class _SessionDetailScreenState extends State<SessionDetailScreen> {
   Future<String> _exportPdf(BuildContext context) async {
     try {
       final pdfService = PdfExportService();
-      final path = await pdfService.exportSessionToPdf(session);
+      final path = await pdfService.exportSessionToPdf(widget.session);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('PDF exported: $path')),
       );
@@ -40,8 +46,25 @@ import '../services/local_logger.dart';
     }
   }
 
+  void _triggerHaptic(String urgency) {
+    if (urgency == 'red') {
+      HapticFeedback.heavyImpact();
+    } else if (urgency == 'yellow') {
+      HapticFeedback.mediumImpact();
+    } else {
+      HapticFeedback.selectionClick();
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _triggerHaptic(widget.session.urgency));
+  }
+
   @override
   Widget build(BuildContext context) {
+    final session = widget.session;
     return Scaffold(
       appBar: AppBar(title: Text('Session Details')),
       body: Padding(
@@ -98,24 +121,7 @@ import '../services/local_logger.dart';
       ),
     );
   }
-
-  void _triggerHaptic(String urgency) {
-    if (urgency == 'red') {
-      HapticFeedback.heavyImpact();
-    } else if (urgency == 'yellow') {
-      HapticFeedback.mediumImpact();
-    } else {
-      HapticFeedback.selectionClick();
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) => _triggerHaptic(session.urgency));
 }
 
 // TODO: Add screen reader accessibility support
-// TODO: Add haptic feedback for urgency levels
 // TODO: Add high-contrast mode toggle
-  }
-}
