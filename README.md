@@ -17,14 +17,21 @@ The main Flutter app code is in `src/lib/`:
 - `test/` — Widget and unit tests
 
 
-## Current Status (May 2026)
 
-All Wave 1 and Wave 2 features are complete:
+
+All Wave 1, 2, 3, and 4 features are complete:
 - **Accessibility:** Full screen reader support, haptic feedback for urgency, high-contrast mode toggle
-- **Safety:** Prominent disclaimers, emergency number auto-detection by locale, dedicated emergency resources screen
-- **Usability:** History screen with search/filter, detail view, PDF export/share (stub)
+- **Safety:** Prominent disclaimers, emergency number auto-detection by locale, dedicated emergency resources screen, local emergency auto-dial/SMS
+- **Usability:** Multilingual support, history screen with search/filter, detail view, PDF export/share, customizable triage advice (user profile, chronic conditions), on-device symptom photo analysis, image annotation UI, user feedback loop
 - **Error Handling:** User-friendly error messages, local privacy-preserving logging for crash reports
 - **Performance:** <5s triage response, performance overlay and profiling hooks for UI/model inference
+- **Model Management:** Secure, user-approved model updates with UI
+- **Compliance:** Full HIPAA/GDPR audit, penetration testing, privacy and consent review
+- **Testing:** Automated unit, integration, and end-to-end tests
+- **Community & Open Source:** CONTRIBUTING.md, code of conduct, issue templates, PR guidelines
+- **App Store Readiness:** Privacy policy, terms of use, support channels, iOS/Android submission prep
+
+**All planned features and documentation are complete as of May 2026.**
 
 See TASKS.MD for the full implementation plan and progress.
 

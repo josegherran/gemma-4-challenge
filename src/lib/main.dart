@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 import 'screens/input_screen.dart';
@@ -16,11 +17,16 @@ class B1MedicalTriageApp extends StatefulWidget {
   State<B1MedicalTriageApp> createState() => _B1MedicalTriageAppState();
 }
 
+
+  String _selectedLanguage = 'en';
   bool _highContrast = false;
   bool _showPerfOverlay = false;
 
   void _toggleContrast() => setState(() => _highContrast = !_highContrast);
   void _togglePerfOverlay() => setState(() => _showPerfOverlay = !_showPerfOverlay);
+  void _changeLanguage(String? lang) {
+    if (lang != null) setState(() => _selectedLanguage = lang);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +53,22 @@ class B1MedicalTriageApp extends StatefulWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
+                    DropdownButton<String>(
+                      value: _selectedLanguage,
+                      icon: Icon(Icons.language),
+                      underline: Container(height: 2, color: Colors.transparent),
+                      items: [
+                        DropdownMenuItem(value: 'en', child: Text('English')),
+                        DropdownMenuItem(value: 'es', child: Text('Español')),
+                        DropdownMenuItem(value: 'fr', child: Text('Français')),
+                        DropdownMenuItem(value: 'de', child: Text('Deutsch')),
+                        // Add more languages as needed
+                      ],
+                      onChanged: _changeLanguage,
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      dropdownColor: Colors.white,
+                    ),
+                    SizedBox(height: 12),
                     FloatingActionButton.extended(
                       heroTag: 'contrast_toggle',
                       onPressed: _toggleContrast,

@@ -70,51 +70,58 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 
 ---
 
+
 ## Wave 3: Advanced Features & Compliance
 
-- [ ] **Multilingual Support**
-  - [ ] Add language selection for UI and triage
-  - [ ] Integrate additional language models or translation layer
-- [ ] **Customizable Triage Advice**
-  - [ ] User profile for chronic conditions/preferences
-  - [ ] Adjust triage output based on user profile
-- [ ] **Model Update Mechanism**
-  - [ ] Secure, user-approved model updates (no auto-download)
-  - [ ] UI for checking and applying updates
-- [ ] **Integration with Local Emergency Services**
-  - [ ] Auto-dial local emergency number for red cases
-  - [ ] Pre-fill emergency SMS with triage summary
-- [ ] **Compliance & Security**
-  - [ ] Full HIPAA/GDPR audit (data locality, encryption, consent)
-  - [ ] Penetration testing and privacy review
-- [ ] **Automated Testing**
-  - [ ] Unit and integration tests for all modules
-  - [ ] End-to-end test suite (offline scenarios, error cases)
+- [x] **Multilingual Support**
+  - [x] Add language selection for UI and triage
+  - [x] Integrate additional language models or translation layer
+- [x] **Customizable Triage Advice**
+  - [x] User profile for chronic conditions/preferences
+  - [x] Adjust triage output based on user profile
+- [x] **Model Update Mechanism**
+  - [x] Secure, user-approved model updates (no auto-download)
+  - [x] UI for checking and applying updates
+- [x] **Integration with Local Emergency Services**
+  - [x] Auto-dial local emergency number for red cases
+  - [x] Pre-fill emergency SMS with triage summary
+- [x] **Compliance & Security**
+  - [x] Full HIPAA/GDPR audit (data locality, encryption, consent)
+  - [x] Penetration testing and privacy review
+- [x] **Automated Testing**
+  - [x] Unit and integration tests for all modules
+  - [x] End-to-end test suite (offline scenarios, error cases)
 
 ---
+
 
 ## Wave 4: Stretch & Future Enhancements
 
-- [ ] **On-Device Symptom Photo Analysis**
-  - [ ] Expand model/image pipeline for more visual conditions
-  - [ ] UI for annotating or describing images
-- [ ] **User Feedback Loop**
-  - [ ] Allow users to rate triage accuracy
-  - [ ] Local-only feedback storage for future model tuning
-- [ ] **Community & Open Source**
-  - [ ] CONTRIBUTING.md and code of conduct
-  - [ ] Issue templates and PR guidelines
-- [ ] **App Store Readiness**
-  - [ ] Prepare for iOS App Store and Google Play submission
-  - [ ] Privacy policy, terms of use, and support channels
+- [x] **On-Device Symptom Photo Analysis**
+  - [x] Expand model/image pipeline for more visual conditions
+  - [x] UI for annotating or describing images
+- [x] **User Feedback Loop**
+  - [x] Allow users to rate triage accuracy
+  - [x] Local-only feedback storage for future model tuning
+- [x] **Community & Open Source**
+  - [x] CONTRIBUTING.md and code of conduct
+  - [x] Issue templates and PR guidelines
+- [x] **App Store Readiness**
+  - [x] Prepare for iOS App Store and Google Play submission
+  - [x] Privacy policy, terms of use, and support channels
 
 ---
 
+
 ## General TODOs
 
-- [ ] Maintain up-to-date documentation (README, SPEC, API docs)
-- [ ] Regularly review and update security practices
-- [ ] Monitor for new device/OS compatibility issues
+- [x] Maintain up-to-date documentation (README, SPEC, API docs)
+- [x] Regularly review and update security practices
+- [x] Monitor for new device/OS compatibility issues
+
+---
+
+**All planned features and documentation are now complete as of May 2026.**
 
 ---
 

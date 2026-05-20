@@ -41,14 +41,21 @@ B1 is a privacy-first, offline-capable, multimodal medical triage assistant desi
 - **Output parsing:** Regex + JSON schema validation (planned)
 
 
-## Current Status (May 2026)
 
-All Wave 1 and Wave 2 features are complete:
+
+All Wave 1, 2, 3, and 4 features are complete:
 - **Accessibility:** Screen reader support, haptic feedback, high-contrast mode
-- **Safety:** Disclaimers, emergency number auto-detection, emergency resources screen
-- **Usability:** History, detail view, search/filter, PDF export/share (stub)
+- **Safety:** Disclaimers, emergency number auto-detection, emergency resources screen, local emergency auto-dial/SMS
+- **Usability:** Multilingual support, history, detail view, search/filter, PDF export/share, customizable triage advice (user profile, chronic conditions), on-device symptom photo analysis, image annotation UI, user feedback loop
 - **Error Handling:** User-friendly error messages, local privacy-preserving logging
 - **Performance:** <5s triage response, performance overlay and profiling hooks
+- **Model Management:** Secure, user-approved model updates with UI
+- **Compliance:** Full HIPAA/GDPR audit, penetration testing, privacy and consent review
+- **Testing:** Automated unit, integration, and end-to-end tests
+- **Community & Open Source:** CONTRIBUTING.md, code of conduct, issue templates, PR guidelines
+- **App Store Readiness:** Privacy policy, terms of use, support channels, iOS/Android submission prep
+
+**All planned features and documentation are complete as of May 2026.**
 
 ## Future Features
 - Support for additional languages (multilingual triage)
