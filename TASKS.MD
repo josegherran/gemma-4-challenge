@@ -70,7 +70,6 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 
 ---
 
-
 ## Wave 3: Advanced Features & Compliance
 
 - [x] **Multilingual Support**
@@ -94,7 +93,6 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 
 ---
 
-
 ## Wave 4: Stretch & Future Enhancements
 
 - [x] **On-Device Symptom Photo Analysis**
@@ -112,7 +110,6 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 
 ---
 
-
 ## General TODOs
 
 - [x] Maintain up-to-date documentation (README, SPEC, API docs)
@@ -126,6 +123,7 @@ This document organizes all implementation tasks and TODOs for the B1 project, g
 ---
 
 **Legend:**
+
 - [ ] = Not started
 - [x] = Completed
 

@@ -16,10 +16,8 @@ The main Flutter app code is in `src/lib/`:
 - `assets/` — Images and model files
 - `test/` — Widget and unit tests
 
-
-
-
 All Wave 1, 2, 3, and 4 features are complete:
+
 - **Accessibility:** Full screen reader support, haptic feedback for urgency, high-contrast mode toggle
 - **Safety:** Prominent disclaimers, emergency number auto-detection by locale, dedicated emergency resources screen, local emergency auto-dial/SMS
 - **Usability:** Multilingual support, history screen with search/filter, detail view, PDF export/share, customizable triage advice (user profile, chronic conditions), on-device symptom photo analysis, image annotation UI, user feedback loop
@@ -112,7 +110,6 @@ Provide accessible, private, offline-capable first-level medical triage guidance
          ↑ ZERO network calls after model download ↑
 ```
 
-
 **Tech Stack:**
 
 | Layer              | Technology                              | Reason                                         |
@@ -177,24 +174,23 @@ Patient symptoms: {user_text}
 
 ### Benefits
 
-| Benefit              | Detail                                                      |
-|----------------------|------------------------------------------------------------ |
-| Complete data privacy| Zero health data leaves the device — ever                  |
-| Offline-first        | Works in airplane mode, remote areas, disaster zones        |
-| Zero recurring cost  | No API bill per query — model runs locally                 |
+| Benefit              | Detail                                                     |
+|----------------------|------------------------------------------------------------|
+| Complete data privacy| Zero health data leaves the device — ever                 |
+| Offline-first        | Works in airplane mode, remote areas, disaster zones       |
+| Zero recurring cost  | No API bill per query — model runs locally                |
 | Multimodal           | Photo of a wound provides context no text description can match |
 | Accessibility        | Voice input, large text, high-contrast mode, screen reader, haptic feedback |
-| Cross-platform       | iOS + Android from a single Flutter codebase                |
+| Cross-platform       | iOS + Android from a single Flutter codebase               |
 
 ---
 
 ### Judging Criteria Alignment
 
-| Criterion                              | How B1 scores                                                                                                                        |
-|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Criterion                              | How B1 scores                                                                                                                       |
+|----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | **Intentional & effective Gemma 4 use**| Small model is the *only* architecturally valid choice — the privacy + offline premise mandates on-device execution. Gemma 4's multimodal 4B variant enables photo-informed triage that older on-device generations could not do. |
 | **Technical implementation quality**    | End-to-end on-device ML pipeline: model quantization, MediaPipe integration, structured output parsing, voice input, encrypted local storage |
-| **Creativity & originality**            | Multimodal offline medical triage is a genuinely novel intersection of edge AI and healthcare accessibility                           |
-| **Usability & UX**                     | 3-screen flow; color-coded urgency, voice input, history, PDF export, accessibility, performance profiling, robust error handling    |
+| **Creativity & originality**            | Multimodal offline medical triage is a genuinely novel intersection of edge AI and healthcare accessibility |
+| **Usability & UX**                     | 3-screen flow; color-coded urgency, voice input, history, PDF export, accessibility, performance profiling, robust error handling |
 
----
